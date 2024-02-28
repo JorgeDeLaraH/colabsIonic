@@ -1,0 +1,53 @@
+<ion-content>
+  <div class="d-flex justify-content-center mt-2">
+    <ion-img class="w-75 mb-1" src="../../../assets/logo.png"></ion-img>
+  </div>
+  <div class="d-flex justify-content-center mt-1">
+    <ion-text>
+      <h3 class="fw-bold">Colaborador:</h3>
+    </ion-text>
+  </div>
+  <div class="container mt-1">
+    <form (ngSubmit)="submitForm()">
+      <ion-item class="input-box">
+        <ion-input [value]="queryData.strName" labelPlacement="floating" label="Nombre" type="text" [(ngModel)]="formData.nombre" name="nombre" required></ion-input>
+      </ion-item>
+  
+      <ion-item class="input-box">
+
+        <ion-input [value]="queryData.strFirstLast" label="Apellido Paterno" labelPlacement="floating" type="text" [(ngModel)]="formData.apellidoPaterno" name="apellidoPaterno" required></ion-input>
+      </ion-item>
+  
+      <ion-item class="input-box">
+        <ion-input [value]="queryData.strSecondLast" label="Apellido Materno" labelPlacement="floating" type="text" [(ngModel)]="formData.apellidoMaterno" name="apellidoMaterno" required></ion-input>
+      </ion-item>
+  
+      <ion-item class="input-box">
+        <ion-label position="fixed">Rol</ion-label>
+        <ion-select [value]="queryData.strRole" slot="end" placeholder="Selecciona" [(ngModel)]="formData.rol" name="rol">
+        <ion-select-option *ngFor="let item of dropdownItems" [value]="item.value">{{ item.label }}</ion-select-option>
+    </ion-select>
+      </ion-item>
+  
+      <ion-item class="input-box">
+        
+        <ion-input [value]="queryData.strEmail" type="email" label="Correo" labelPlacement="floating" [(ngModel)]="formData.correo" name="correo" required></ion-input>
+      </ion-item>
+  
+      <ion-item class="input-box">
+        <ion-input [value]="queryData.intPhone" label="Teléfono" labelPlacement="floating" type="number" [(ngModel)]="formData.telefono" name="telefono" maxlength="10" required></ion-input>
+      </ion-item>
+      <ion-row>
+        <ion-col size="12" class="d-flex justify-content-end">
+          <ion-button color="tertiary" (click)="getSkills()">Skills</ion-button>
+        </ion-col>
+        <ion-col size="6">
+          <ion-button color="tertiary" expand="full" type="submit">Guardar</ion-button>
+        </ion-col>
+        <ion-col size="6">
+          <ion-button color="tertiary" (click)="back()" expand="full">Salir</ion-button>
+        </ion-col>
+      </ion-row>
+    </form>
+  </div>
+</ion-content>

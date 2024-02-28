@@ -1,0 +1,29 @@
+
+<ion-content [fullscreen]="true">
+  <div class="d-flex justify-content-center mt-2">
+    <ion-img class="w-75 mb-1" src="../../../assets/logo.png"></ion-img>
+  </div>
+  <div class="d-flex justify-content-center mt-1">
+    <ion-text>
+      <h3 class="fw-bold">Colaborador: {{queryData.strName}} {{queryData.strFirstLast}}</h3>
+    </ion-text>
+  </div>
+  <div class="container d-flex justify-content-center mt-1">
+    <ion-text>
+      <h5 class="fw-bold">Skills:</h5>
+    </ion-text>
+  </div>
+  <hr>
+  <ion-list inset="true">
+    <ion-item *ngFor="let skill of querySkills;" class="text-center">
+       <ion-label><ion-text><p class="fs-4"> {{skill.strSkillName}} - {{skill.strLevel}} - {{skill.numYearExp}}</p></ion-text></ion-label>
+       <hr>
+    </ion-item>
+  </ion-list>
+  <ion-row class="d-flex justify-content-center">
+    <ion-col size="10">
+      <ion-button size="small" (click)="backito()" type="button" color="tertiary" expand="block">Salir</ion-button>
+    </ion-col>
+  </ion-row>
+</ion-content>
+
